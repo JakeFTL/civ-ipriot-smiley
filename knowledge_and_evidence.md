@@ -214,10 +214,10 @@ Compare and contrast the classes Happy and Sad.
    > They both have draw_mouth() and draw_eyes() methods
    >
 3. What difference stands out the most to you and why?
-   > Your answer here
+   > Happy has two parent classes (Smiley and Blinkable), whereas Sad only has one (Smiley).
    >
 4. How does this difference affect the functionality of these classes
-   > Happy has two parent classes (Smiley and Blinkable), whereas Sad only has one (Smiley).
+   > 
    >
 
 ### Where is the Sense(Hat) in the code?
