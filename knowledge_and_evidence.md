@@ -94,6 +94,7 @@ Address the following tasks and questions based on the code provided in this rep
 4. Evidence this by providing screenshots of the project directory structure and the output of the `main.py` file
 
 ![Directory Structure (INSERT YOUR SCREENSHOT)](screenshots/directory-structure.png)
+
 ![Local Execution (INSERT YOUR SCREENSHOT)](screenshots/local-execution.png)
 
 If you are running on a Raspberry Pi, you can use the following command to run the project and then screenshot the result:
@@ -109,11 +110,11 @@ python3 main.py
 
 1. Examine the code for the `smiley.py` file and provide  an example of a variable of each of the following types and their corresponding values (`_` should be replaced with the appropriate values):
 
-   | Type                    | name   | value |
-   | ----------              |--------|-------|
-   | built-in primitive type | dimmed | bool  |
-   | built-in composite type | WHITE  | tuple |
-   | user-defined type       | Smiley | class |
+   | Type                    | name   | value           |
+   | ----------              |--------|-----------------|
+   | built-in primitive type | dimmed | True            |
+   | built-in composite type | WHITE  | (255, 255, 255) |
+   | user-defined type       | smiley | Happy()         |
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
@@ -133,12 +134,12 @@ python3 main.py
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
-   | Type                    | Used? | Example |
-   | ----------------------- |-------| --------|
-   | int                     | Yes   | eyes = [10, 13, 18, 21]          |
-   | float                   | Yes   | delay=0.25          |
-   | str                     | No    | _          |
-   | bool                    | Yes   | dimmed=True          |
+   | Type                    | Used? | Example                 |
+   | ----------------------- |-------|-------------------------|
+   | int                     | Yes   | eyes = [10, 13, 18, 21] |
+   | float                   | Yes   | delay=0.25              |
+   | str                     | No    | jake = "awesome"         |
+   | bool                    | Yes   | dimmed=True             |
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
@@ -148,7 +149,7 @@ python3 main.py
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
-   > A constructor is used to create a new instance of a class, in this case it will create a new instance of the class Happy and inherit the attributes and methods of the 'Smiley' and 'Blinkable' classes.
+   > A constructor is used to create a new instance of a class, in this case it will create a new instance of the class Happy, inherit the attributes and methods of the 'Smiley' and 'Blinkable' classes and call the self.draw_mouth() and self.draw_eyes() methods defined within the Happy class.
    >
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
@@ -160,7 +161,7 @@ python3 main.py
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
    
-> PEP 8 is the style used. Yes it is likely the style used in SenseHat as PEP8 is the universally accepted style for Python programming due to readability and also maintaining consistency throughout projects or even the industry as a whole in regards to Python.
+> PEP 8 is the style used. Yes it is likely the style used in SenseHat is PEP8 given the class is correctly formatted with CamelCase, and methods are labelled using snake_case when called in smiley.py. It is also the universally accepted style for Python programming due to readability and also maintaining consistency throughout projects or even the industry as a whole in regards to Python.
 >
 
 2. List three aspects of this convention you see applied in the code.
@@ -208,13 +209,13 @@ python3 main.py
 Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
-   > 
+   > Happy has two parent classes (Smiley and Blinkable), whereas Sad only has one (Smiley).
    >
 2. What are the key similarities?
    > They both have draw_mouth() and draw_eyes() methods
    >
 3. What difference stands out the most to you and why?
-   > Happy has two parent classes (Smiley and Blinkable), whereas Sad only has one (Smiley).
+   > Sad can not blink
    >
 4. How does this difference affect the functionality of these classes
    > 
@@ -225,7 +226,7 @@ Compare and contrast the classes Happy and Sad.
 1. Which class(es) utilize the functionality of the SenseHat?
    > Your answer here
    >
-2. Which of these classes directly interact with the SenseHat functionalities?
+2. Which of the SenseHat's functionalities do(es) it/them utilize ?
    > Your answer here
    >
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
