@@ -196,7 +196,7 @@ python3 main.py
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
-> Abstraction is essentially hiding the inner workings of a process, only showing the user what they need. For example, within the Smiley class we have 'self.sense_hat = SenseHat()', everything that's involved in SenseHat is hidden within the SenseHat method, and you don't need to know or see it in order to use the Smiley class.
+> Abstraction is essentially hiding the inner workings of a process, only showing the user what they need. For example, within the Smiley class we have 'self.sense_hat = SenseHat()', everything that's involved in SenseHat is hidden within the SenseHat class, and you don't need to know or see it in order to use the Smiley class.
 >
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
