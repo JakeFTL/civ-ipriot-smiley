@@ -149,24 +149,24 @@ python3 main.py
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
-   > A constructor is used to create a new instance of a class, in this case it will create a new instance of the class Happy, inherit the attributes and methods of the 'Smiley' and 'Blinkable' classes and call the self.draw_mouth() and self.draw_eyes() methods defined within the Happy class.
+   > A constructor is used to create a new instance of a class with specific attributes, in this case it will create a new instance of the class Happy, inherit the attributes and methods of the 'Smiley' and 'Blinkable' classes and call the self.draw_mouth() and self.draw_eyes() methods defined within the Happy class which are methods defined within the Happy class that display the mouth and eyes of the smiley in a specified way.
    >
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
-   > On initialization it executes all statements from within the init method defined in Smiley with the addition (thanks to the 'super()' call) of the self.draw_mouth() and self.draw_eyes() methods as defined within the Happy class.
+   > On initialization it will call the __init__ methods from the parent classes, given only Smiley has an __init__ method it will call that first along with anything within that method being executed, it will then call the methods defined within the class 'Happy' __init__ method which are draw_mouth() and draw_eyes() which will complete the initialization of a new instance of class Happy.
    >
 
 ### Code style
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
    
-> PEP 8 is the style used. Yes it is likely the style used in SenseHat is PEP8 given the class is correctly formatted with CamelCase, and methods are labelled using snake_case when called in smiley.py. It is also the universally accepted style for Python programming due to readability and also maintaining consistency throughout projects or even the industry as a whole in regards to Python.
+> PEP 8 is the style used. Yes it is likely the style used in SenseHat is PEP8 given the class 'SenseHat()' is correctly formatted with CamelCase, and methods are labelled using snake_case when called in smiley.py such as 'set_pixels()'. It is also the universally accepted style for Python programming due to readability and also maintaining consistency throughout projects or even the industry as a whole in regards to Python.
 >
 
 2. List three aspects of this convention you see applied in the code.
 
-> - Within the class Smiley, the colour variables are labelled in all upper-case as they are not meant to be re-assigned.
+> - Within the class Smiley, the colour variables are labelled in all upper-case as they are not meant to be re-assigned. They are considered constants.
 > - Variables are written in snake_case, for example 'dim_display'
 > - Two empty lines above classes to separate them from other sections of the code.
 >
@@ -215,22 +215,22 @@ Compare and contrast the classes Happy and Sad.
    > They both have draw_mouth() and draw_eyes() methods
    >
 3. What difference stands out the most to you and why?
-   > Sad can not blink
+   > Sad does not have a blink() method and does not inherit from the Blinkable class.
    >
 4. How does this difference affect the functionality of these classes
-   > 
+   > Because Happy inherits from Blinkable it must have a blink method defined, which allows it to make the face blink. Whereas Sad can not make the face blink as it has no such method defined.
    >
 
 ### Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
-   > Your answer here
+   > Smiley, Happy and Sad.
    >
 2. Which of the SenseHat's functionalities do(es) it/them utilize ?
-   > Your answer here
+   > SenseHat() is called and assigned to 'self.sense_hat' within the Smiley class, and then this variable is used within the dim_display() and show() methods which adjust the light intensity and display the smiley respectively. Both Happy and Sad inherit these methods.
    >
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
-   > Your answer here
+   > Encapsulation is the concept of hiding the inner workings of something and only revealing through an interface access to the capabilities within the class. This helps to protect the functionality of the class, and also simplifies utilization of it as you don't necessarily need to know how it all works behind the curtain. Such as driving a car, without needing to know how it runs under the hood. 
    >
 
 ### Sad Smileys Can’t Blink (Or Can They?)
@@ -241,12 +241,12 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
-> Your answer here
+> Yes, as the class Happy is inheriting from the Blinkable class, it also inherits the abstractmethod blink(), which means a blink method must be defined within the class.
 >
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
-> Your answer here
+> No, as the blink() method is only defined as an abstract method within Blinkable(), it is required that each sub class define it individually, and as such it would be expected that some or all will function differently to one another.
 >
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
