@@ -316,7 +316,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > We have White, Green, Red, and Yellow defined within the class Smiley.
+        > We have White, Green, Red, and Yellow defined within the class Smiley and these are inherited by sub-classes of Smiley (Happy & Sad)
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
         > These are class attributes/variables, and given they are in all capital letters, it is assumed that they are constant and will (or should) never change.
      3. Add the color blue to the appropriate class using the appropriate format and values.
@@ -328,7 +328,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Changing the value assigned to Y would probably be the easiest way, for example changing it from 'Y = self.YELLOW' to 'Y = self.GREEN' within the init method of Smiley.
+     > Changing the value assigned to Y would probably be the easiest way, for example changing it from 'Y = self.YELLOW' to 'Y = self.GREEN' within the init method of Smiley. This would also need to be adjusted within the draw_eyes() function in both the Happy and Sad classes.
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
 
@@ -358,13 +358,13 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
-  ![Bulk Rename](screenshots/bulk_rename.png)
+  ![Bulk Rename](screenshots/refactor-grid.png)
 
   5. **Update the `complexion` method:** Adjust this method to return `self.my_complexion`, ensuring that whatever color is assigned during instantiation is what the smiley displays.
 
   6. **Verification:** Run the updated code to confirm that Smileys still defaults to yellow unless specified otherwise.
 
-  ### Flexible Colors – Step 3
+    ### Flexible Colors – Step 3
 
   With the foundational changes in place, it's now possible to implement varied smiley colors for different emotional expressions.
 
